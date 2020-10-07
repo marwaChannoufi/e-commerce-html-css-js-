@@ -79,7 +79,7 @@
                 <button type="button"
                         class="btn btn-outline-secondary btn-sm"
                         onclick="cart2('${MOBILE[el-1].name}','${MOBILE[el-1].price}','${URL}','${el}','${btn}')">
-                        Buy
+                        <a href="cart.html" style="color:inherit;">Buy</a>
                 </button>
                 <button type="button"
                 id="${btn}"
@@ -117,7 +117,7 @@
                 <button type="button"
                         class="btn btn-outline-secondary btn-sm"
                          onclick="cart2('${TABLETTE[el-1].name}','${TABLETTE[el-1].price}','${URL}','${el}','${btn}')">
-                    Buy
+                         <a href="cart.html" style="color:inherit;">Buy</a>
                 </button>
                 <button type="button"
                         id="${btn}" 
@@ -154,7 +154,7 @@
                 <button type="button"
                         class="btn btn-outline-secondary btn-sm"
                          onclick="cart2('${ORDINATEUR[el-1].name}','${ORDINATEUR[el-1].price}','${URL},''${el}','${btn}')">
-                    Buy
+                    <a href="cart.html" style="color:inherit;">Buy</a>
                 </button>
                 <button type="button"
                         id="${btn}"
@@ -180,7 +180,7 @@
         `
     }
 
-    // ======cart function
+    // ======cart function add to cart
     function cart(name,price,url,el,btncart){
         var item={
             name:name,
@@ -203,6 +203,30 @@
             document.getElementById(btncart).style.display="none"
            document.innerHTML=`${registre()}`
      }
+
+    //  cartfunction byu button
+    function cart2(name,price,url,el,btncart){
+        var item={
+            name:name,
+            price:price,
+            url:url
+        }
+        cartItems.push(item)
+        
+        let storage= JSON.parse(localStorage.getItem("cart"))
+        if(storage==null){
+
+            products.push(item)
+            localStorage.setItem("cart",JSON.stringify(products))
+        }else{
+            products=JSON.parse(localStorage.getItem("cart"))
+            products.push(item)
+            localStorage.setItem("cart",JSON.stringify(products))
+        }
+        cart_n.innerHTML=`${products.length}`
+        document.getElementById(btncart).style.display="none"
+       document.innerHTML=`${registre()}`
+    }
     // ======render
     function render(){
         for(let i=1;i<=6;i++){
@@ -217,4 +241,4 @@
             cart_n.innerHTML=`[${products.length}]`
         }
     }
-    render()
+  
