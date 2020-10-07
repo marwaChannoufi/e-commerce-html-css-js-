@@ -1,0 +1,9 @@
+
+ /*Font Awesome Free Icon*/
+ @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+
+ /* img carousel */
+ .imgFilter{
+     filter: brightness(0.25);
+ }
