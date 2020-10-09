@@ -92,14 +92,14 @@ function render(){
         <td scope="col"></td>
         <td scope="col"></td>
         <td scope="col"></td>
-        <td scope="col"> Total : $${total}</td> 
+        <td scope="col"> <b>Total</b> : $${total}</td> 
     </tr>
     <tr>
         <th scope="row"></th>
         <td scope="col"></td>
         <td scope="col"></td>
         <td scope="col">
-            <button id="btnBuy" onclick="clean()" class="btn btn-warning text-white"> Clean shopping cart</button>
+            <button id="btnBuy" onclick="clean()" class="btn btn-warning text-white">Clean shopping cart</button>
         </td>
         <td scope="col">
             <button id="btnClean" onclick="buy()" class="btn btn-success">Buy</button>
