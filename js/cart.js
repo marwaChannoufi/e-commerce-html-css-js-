@@ -43,7 +43,7 @@ function buy(){
     var t=d.getTime()
     var counter=t
     counter+=1
-    let db= firebase.database().ref("order/"+counter)
+    let db= firebase.databaseURL().ref("order/"+counter)
     let itemdb={
         id:counter,
         order:counter-aa,
@@ -92,7 +92,18 @@ function render(){
         <td scope="col"></td>
         <td scope="col"></td>
         <td scope="col"></td>
-        <td scope="col">Total : $${total}</td> 
+        <td scope="col"> Total : $${total}</td> 
+    </tr>
+    <tr>
+        <th scope="row"></th>
+        <td scope="col"></td>
+        <td scope="col"></td>
+        <td scope="col">
+            <button id="btnBuy" onclick="clean()" class="btn btn-warning text-white"> Clean shopping cart</button>
+        </td>
+        <td scope="col">
+            <button id="btnClean" onclick="buy()" class="btn btn-success">Buy</button>
+        </td> 
     </tr>
     `
 }
